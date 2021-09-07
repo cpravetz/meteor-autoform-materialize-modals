@@ -159,7 +159,10 @@ Template.autoformMaterializeModal.helpers({
 
 // events
 Template.autoformMaterializeModal.events({
-
+  'focusout '(event,template){
+    const instance = Template.instance()
+    //console.log('focus out heard');
+  },
   // when click on submit
   'click .js-autoform-materialize-modal-submit'(event, template) {
     const instance = Template.instance()
@@ -208,3 +211,4 @@ Template.autoformMaterializeModal.onDestroyed(() => {
   $(document).off('keyup')
   cleanUp(instance)
 })
+
